@@ -42,6 +42,8 @@ void setup() {
   display.setCursor(0, 0);
 
   display.print("Connecting to Wi-Fi");
+  Serial.println("Connecting to Wi-Fi");
+
   display.display();
 
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
@@ -52,7 +54,9 @@ void setup() {
   }
 
   display.println("Connected.");
+  Serial.println("Connected.");
 
+  Serial.printf("IP Addr: %s\n", WiFi.localIP().toString().c_str());
   display.print("IP Addr: ");
   display.println(WiFi.localIP());
   display.display();
